@@ -18,7 +18,7 @@ class ToDoLabel extends Component {
     show_edit_field = () => {
         return(
             <div className="container center">
-                <ToDoInput handleAdd={this.handleUpdate}/>  
+                <ToDoInput handleAdd={this.handleUpdate} user_input={this.props.todo.task}/>  
                 <button className="teal btn" onClick={()=>{this.setState({ to_edit : false })}}> back </button>              
             </div>
         )

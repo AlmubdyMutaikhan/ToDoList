@@ -1,7 +1,6 @@
 import './App.css';
 import React, {Component} from 'react'
 import ToDoInput from './components/ToDoInput'
-import {HashRouter} from 'react-router-dom'
 import ShowToDo from './components/ShowToDo'
 
 class App extends Component
@@ -45,14 +44,12 @@ class App extends Component
 
     render() {
         return (
-            <HashRouter>
             <div className="container">
                 <h1 className="center blue-text">To Do List</h1>
                 <ToDoInput handleAdd={this.handleAdd}/>     
                 <br/>      
                 <ShowToDo  todo_set={this.state.todos} is_first={this.state.first_time} handleDelete={this.handleDelete} handleEdit={this.handleEdit}/>
             </div>
-            </HashRouter>
         )
     }
 }

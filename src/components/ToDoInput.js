@@ -21,6 +21,7 @@ class ToDoInput extends Component {
     }
 
     handleChange = (event) => {
+        event.preventDefault();
         let is_empty = false;
 
         if(event.target.value !== "") {
@@ -47,7 +48,13 @@ class ToDoInput extends Component {
         return(
             <div className="container">
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" onChange={this.handleChange} placeholder="set a task..." id="input" value={this.props.value ? this.props.value : this.state.task}/>
+                    <input type="text"
+                           onChange={this.handleChange}
+                           placeholder="set a task..."
+                           id="input" 
+                           defaultValue={this.props.user_input}
+                           ref={this.input}
+                           />
                 </form>
             </div>
         )
